@@ -1,0 +1,19 @@
+Public Class Form1  
+    Dim var As String = "0"  
+    Public Function fibonacci(ByVal contador As Integer,  
+    ByVal n As Integer, ByVal p1 As Integer, ByVal p2 As Integer)  
+        If (contador <> n) Then  
+            var = var + " - " + Trim(p2)  
+            TextBox2.Text = var  
+            fibonacci(contador + 1, n, p2, p1 + p2)  
+        End If  
+    End Function  
+    Private Sub Button1_Click(ByVal sender As System.Object,  
+    ByVal e As System.EventArgs) Handles Button1.Click  
+        Dim n As Integer  
+        n = TextBox1.Text  
+        If (n > 0) Then  
+            fibonacci(0, n - 1, 0, 1)  
+        End If  
+    End Sub  
+End Class  
